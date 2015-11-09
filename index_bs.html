@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>d3js World</title>
+    <script src="try.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- bootstrap links, no need for a server -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="panel panel-default">
+      <div class="panel-body">
+	<h1>Get Started with Javascript</h1>
+	<button id="source" class="btn btn-default btn-lg">pointless button</button><br>
+
+	Step 1: open up the javascript console<br><br>
+	Step 2: start typing! <br><br>
+	<h3>Javascript functions and namespaces</h3>
+	<div style="margin:10px; font-family:Monaco">
+	  > var t = tries() <br>
+	  > t <br>
+	  > var p = new MYAPPLICATION.product(10)
+	  > p.getPrice()
+	  > p.getPrice
+	</div>
+	<h3>Jquery and the DOM</h3>
+	The DOM (Document Object Model) is how javascript accesses divs, spans, and other things in the html.  
+	JQuery is a popular library that makes it easier and somehow more powerful or something.
+	<div style="margin:10px; font-family:Monaco">
+	  > $("#references") <br>
+	  > $("#references").html("I'm the best")<br>
+	</div>
+	However you don't necessarily need JQuery.  If you delete the link to the JQuery library in the head tag, you can still access objects in the DOM.  Try it!  (Delete the script tags and then refresh the page)
+	<div style="margin:10px; font-family:Monaco">
+	  > document.getElementById("references") <br>
+	  > document.getElementById("references").innerHTML="I'm still the best"<br>
+	</div>
+      </div>
+      <div id="references">
+	<h3>References</h3>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">
+	  Introduction to Object Oriented Javascript | Mozilla</a>
+	<a href="http://www.amazon.com/exec/obidos/ASIN/0596517742/wrrrldwideweb">
+	  Javascript: The Good Parts</a> | 
+	<a href="http://javascript.crockford.com/">Douglas Crockford</a>
+      </div>
+    </div>
+  </body>
+</html>
