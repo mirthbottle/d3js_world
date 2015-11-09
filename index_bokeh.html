@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>d3js World</title>
+    <script src="try.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- bootstrap links, no need for a server -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.9.0.min.css" type="text/css" />
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.9.0.min.js"></script>
+  </head>
+  <body>
+    <div class="panel panel-default">
+      <div class="panel-body">
+	<h1>Get Started with Javascript</h1>
+	<button id="source" class="btn btn-default btn-lg">pointless button</button><br>
+
+	Step 1: open up the javascript console<br><br>
+	Step 2: start typing! <br><br>
+	<h3>Javascript functions and namespaces</h3>
+	<div style="margin:10px; font-family:Monaco">
+	  > var t = tries() <br>
+	  > t <br>
+	  > var p = new MYAPPLICATION.product(10)
+	  > p.getPrice()
+	  > p.getPrice
+	</div>
+	<h3>Jquery and the DOM</h3>
+	The DOM (Document Object Model) is how javascript accesses divs, spans, and other things in the html.  
+	JQuery is a popular library that makes it easier and somehow more powerful or something.
+	<div style="margin:10px; font-family:Monaco">
+	  > $("#references") <br>
+	  > $("#references").html("I'm the best")<br>
+	</div>
+	However you don't necessarily need JQuery.  If you delete the link to the JQuery library in the head tag, you can still access objects in the DOM.  Try it!  (Delete the script tags and then refresh the page)
+	<div style="margin:10px; font-family:Monaco">
+	  > document.getElementById("references") <br>
+	  > document.getElementById("references").innerHTML="I'm still the best"<br>
+	</div>
+      </div>
+      <div id="references">
+	<h3>References</h3>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">
+	  Introduction to Object Oriented Javascript | Mozilla</a>
+	<a href="http://www.amazon.com/exec/obidos/ASIN/0596517742/wrrrldwideweb">
+	  Javascript: The Good Parts</a> | 
+	<a href="http://javascript.crockford.com/">Douglas Crockford</a><br>
+	<button class="btn btn-default btn-lg" onclick="transition()" >Update</button>
+	<div>
+	  <a href="http://bl.ocks.org/mbostock/4060954">Steamgraph example from mbostock</a>
+	</div>
+      </div>
+    </div>
+  </body>
+  <div><div class="plotdiv" id="5ecd94a1-6d62-4e42-9b89-9a9d777a5274"></div></div>
+
+<script type="text/javascript">
+    Bokeh.$(function() {
+    var all_models = [{"attributes": {"nonselection_glyph": null, "data_source": {"type": "ColumnDataSource", "id": "9854c67e-1842-4deb-b892-7c1a266e327b"}, "tags": [], "doc": null, "selection_glyph": null, "id": "657244fd-2e22-40bc-9e87-5018e47cf13a", "glyph": {"type": "Line", "id": "3b860a5b-2220-4013-8e75-3c86e7d6c4ff"}}, "type": "GlyphRenderer", "id": "657244fd-2e22-40bc-9e87-5018e47cf13a"}, {"attributes": {"nonselection_glyph": null, "data_source": {"type": "ColumnDataSource", "id": "b94454a1-6926-4a1b-997e-6ad76fba925f"}, "tags": [], "doc": null, "selection_glyph": null, "id": "38db0c3a-e7b5-4acb-99f5-0be0f1f63375", "glyph": {"type": "Line", "id": "e3afccda-cf1e-47ae-8037-82c1f81ab0f4"}}, "type": "GlyphRenderer", "id": "38db0c3a-e7b5-4acb-99f5-0be0f1f63375"}, {"attributes": {"doc": null, "id": "6e3a30eb-b81a-450f-9c13-9a493b3d5d83", "tags": []}, "type": "BasicTickFormatter", "id": "6e3a30eb-b81a-450f-9c13-9a493b3d5d83"}, {"attributes": {"nonselection_glyph": null, "data_source": {"type": "ColumnDataSource", "id": "bd484f77-24e5-4be1-8817-37c9683dd2be"}, "tags": [], "doc": null, "selection_glyph": null, "id": "1282caf0-4dd2-4d04-bf91-e4b860c7356c", "glyph": {"type": "Line", "id": "8b863e1b-caec-453d-af59-78e169a96f10"}}, "type": "GlyphRenderer", "id": "1282caf0-4dd2-4d04-bf91-e4b860c7356c"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "tags": [], "doc": null, "id": "dd54cde7-875c-4553-9a9e-ddf41f127151"}, "type": "ResetTool", "id": "dd54cde7-875c-4553-9a9e-ddf41f127151"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "tags": [], "doc": null, "axis_label": "date", "formatter": {"type": "DatetimeTickFormatter", "id": "6bd9eefb-213c-4169-81e3-71c4498c6be4"}, "ticker": {"type": "DatetimeTicker", "id": "911a3cc9-8402-4ef3-b612-4b28598996bb"}, "id": "0b79dbbf-0c3d-4b5e-b9ea-c1cdf1e5f5ca"}, "type": "DatetimeAxis", "id": "0b79dbbf-0c3d-4b5e-b9ea-c1cdf1e5f5ca"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "tags": [], "doc": null, "id": "40b29558-c7c1-4839-880b-355f92bb34ed"}, "type": "ResizeTool", "id": "40b29558-c7c1-4839-880b-355f92bb34ed"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "dimensions": ["width", "height"], "tags": [], "doc": null, "id": "f9e7169b-0b83-4d46-b9ee-0beba1a0b80e"}, "type": "PanTool", "id": "f9e7169b-0b83-4d46-b9ee-0beba1a0b80e"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "dimensions": ["width", "height"], "tags": [], "doc": null, "id": "097fe9ea-72ff-45ea-b298-feca95541aa2"}, "type": "BoxZoomTool", "id": "097fe9ea-72ff-45ea-b298-feca95541aa2"}, {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6", "attributes": {"x_range": {"type": "Range1d", "id": "95c493b8-d783-4431-b76a-aca3704a7ef0"}, "title_text_font_style": "bold", "title_text_font_size": {"value": "12pt"}, "tags": [], "plot_width": 550, "renderers": [{"type": "GlyphRenderer", "id": "1282caf0-4dd2-4d04-bf91-e4b860c7356c"}, {"type": "GlyphRenderer", "id": "657244fd-2e22-40bc-9e87-5018e47cf13a"}, {"type": "GlyphRenderer", "id": "38db0c3a-e7b5-4acb-99f5-0be0f1f63375"}, {"type": "Legend", "id": "6bba8399-d7a8-49be-890c-e6334136b8ac"}, {"type": "DatetimeAxis", "id": "0b79dbbf-0c3d-4b5e-b9ea-c1cdf1e5f5ca"}, {"type": "LinearAxis", "id": "ec7b1d37-ad5b-4a08-a32c-c94efc8b86c5"}, {"type": "Grid", "id": "de6bd663-abfe-40ed-a136-239eb8af7d1c"}, {"type": "Grid", "id": "194a95ed-23ea-4da2-b544-2f958574d303"}], "plot_height": 350, "right": [], "tool_events": {"type": "ToolEvents", "id": "c579f9ea-e38b-44c8-900d-605623b874ea"}, "responsive": false, "tools": [{"type": "PanTool", "id": "f9e7169b-0b83-4d46-b9ee-0beba1a0b80e"}, {"type": "WheelZoomTool", "id": "d8f1cb2e-2b1f-468c-9e6f-6582e6f8b4c4"}, {"type": "BoxZoomTool", "id": "097fe9ea-72ff-45ea-b298-feca95541aa2"}, {"type": "PreviewSaveTool", "id": "2b5d4d21-1b45-41b1-a957-eb3d42e76c6f"}, {"type": "ResizeTool", "id": "40b29558-c7c1-4839-880b-355f92bb34ed"}, {"type": "ResetTool", "id": "dd54cde7-875c-4553-9a9e-ddf41f127151"}, {"type": "HelpTool", "id": "aad8e515-d5e6-4840-b2f9-382a0901cff5"}], "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6", "title": "Interpreters (x='date', y=['python', 'pypy', 'jython'])", "y_range": {"type": "Range1d", "id": "b7e2f365-7559-4c8d-8fd3-156e83040390"}, "extra_y_ranges": {}, "below": [{"type": "DatetimeAxis", "id": "0b79dbbf-0c3d-4b5e-b9ea-c1cdf1e5f5ca"}], "extra_x_ranges": {}, "above": [], "doc": null, "left": [{"type": "LinearAxis", "id": "ec7b1d37-ad5b-4a08-a32c-c94efc8b86c5"}]}}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "tags": [], "doc": null, "dimension": 0, "ticker": {"type": "DatetimeTicker", "id": "911a3cc9-8402-4ef3-b612-4b28598996bb"}, "id": "de6bd663-abfe-40ed-a136-239eb8af7d1c"}, "type": "Grid", "id": "de6bd663-abfe-40ed-a136-239eb8af7d1c"}, {"attributes": {"column_names": ["x_values", "y_values"], "tags": [], "doc": null, "selected": {"2d": {"indices": []}, "1d": {"indices": []}, "0d": {"indices": [], "flag": false}}, "callback": null, "data": {"x_values": [1420070400000.0, 1420156800000.0, 1420243200000.0, 1420329600000.0, 1420416000000.0, 1420502400000.0, 1420588800000.0, 1420675200000.0, 1420761600000.0, 1420848000000.0, 1420934400000.0, 1421020800000.0, 1421107200000.0, 1421193600000.0], "y_values": [12, 33, 47, 15, 126, 121, 144, 233, 254, 225, 226, 267, 110, 130]}, "id": "9854c67e-1842-4deb-b892-7c1a266e327b"}, "type": "ColumnDataSource", "id": "9854c67e-1842-4deb-b892-7c1a266e327b"}, {"attributes": {"line_color": {"value": "#5ab738"}, "line_width": {"value": 2}, "line_alpha": {"value": 1.0}, "doc": null, "tags": [], "line_dash": [], "y": {"field": "y_values"}, "x": {"field": "x_values"}, "id": "3b860a5b-2220-4013-8e75-3c86e7d6c4ff"}, "type": "Line", "id": "3b860a5b-2220-4013-8e75-3c86e7d6c4ff"}, {"attributes": {"end": 1421193600000.0, "callback": null, "doc": null, "tags": [], "start": 1420070400000.0, "id": "95c493b8-d783-4431-b76a-aca3704a7ef0"}, "type": "Range1d", "id": "95c493b8-d783-4431-b76a-aca3704a7ef0"}, {"attributes": {"end": 293.5, "callback": null, "doc": null, "tags": [], "start": -24.5, "id": "b7e2f365-7559-4c8d-8fd3-156e83040390"}, "type": "Range1d", "id": "b7e2f365-7559-4c8d-8fd3-156e83040390"}, {"attributes": {"geometries": [], "tags": [], "doc": null, "id": "c579f9ea-e38b-44c8-900d-605623b874ea"}, "type": "ToolEvents", "id": "c579f9ea-e38b-44c8-900d-605623b874ea"}, {"attributes": {"line_color": {"value": "#407ee7"}, "line_width": {"value": 2}, "line_alpha": {"value": 1.0}, "doc": null, "tags": [], "line_dash": [], "y": {"field": "y_values"}, "x": {"field": "x_values"}, "id": "e3afccda-cf1e-47ae-8037-82c1f81ab0f4"}, "type": "Line", "id": "e3afccda-cf1e-47ae-8037-82c1f81ab0f4"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "tags": [], "doc": null, "axis_label": "Duration", "formatter": {"type": "BasicTickFormatter", "id": "6e3a30eb-b81a-450f-9c13-9a493b3d5d83"}, "ticker": {"type": "BasicTicker", "id": "bb25feed-4cda-472b-b031-3ff96144e43c"}, "id": "ec7b1d37-ad5b-4a08-a32c-c94efc8b86c5"}, "type": "LinearAxis", "id": "ec7b1d37-ad5b-4a08-a32c-c94efc8b86c5"}, {"attributes": {"doc": null, "id": "911a3cc9-8402-4ef3-b612-4b28598996bb", "tags": []}, "type": "DatetimeTicker", "id": "911a3cc9-8402-4ef3-b612-4b28598996bb"}, {"attributes": {"tags": [], "doc": null, "formats": {}, "id": "6bd9eefb-213c-4169-81e3-71c4498c6be4"}, "type": "DatetimeTickFormatter", "id": "6bd9eefb-213c-4169-81e3-71c4498c6be4"}, {"attributes": {"column_names": ["x_values", "y_values"], "tags": [], "doc": null, "selected": {"2d": {"indices": []}, "1d": {"indices": []}, "0d": {"indices": [], "flag": false}}, "callback": null, "data": {"x_values": [1420070400000.0, 1420156800000.0, 1420243200000.0, 1420329600000.0, 1420416000000.0, 1420502400000.0, 1420588800000.0, 1420675200000.0, 1420761600000.0, 1420848000000.0, 1420934400000.0, 1421020800000.0, 1421107200000.0, 1421193600000.0], "y_values": [22, 43, 10, 25, 26, 101, 114, 203, 194, 215, 201, 227, 139, 160]}, "id": "bd484f77-24e5-4be1-8817-37c9683dd2be"}, "type": "ColumnDataSource", "id": "bd484f77-24e5-4be1-8817-37c9683dd2be"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "dimensions": ["width", "height"], "tags": [], "doc": null, "id": "d8f1cb2e-2b1f-468c-9e6f-6582e6f8b4c4"}, "type": "WheelZoomTool", "id": "d8f1cb2e-2b1f-468c-9e6f-6582e6f8b4c4"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "tags": [], "doc": null, "id": "aad8e515-d5e6-4840-b2f9-382a0901cff5"}, "type": "HelpTool", "id": "aad8e515-d5e6-4840-b2f9-382a0901cff5"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "orientation": "top_left", "tags": [], "doc": null, "id": "6bba8399-d7a8-49be-890c-e6334136b8ac", "legends": [["jython", [{"type": "GlyphRenderer", "id": "1282caf0-4dd2-4d04-bf91-e4b860c7356c"}]], ["pypy", [{"type": "GlyphRenderer", "id": "657244fd-2e22-40bc-9e87-5018e47cf13a"}]], ["python", [{"type": "GlyphRenderer", "id": "38db0c3a-e7b5-4acb-99f5-0be0f1f63375"}]]]}, "type": "Legend", "id": "6bba8399-d7a8-49be-890c-e6334136b8ac"}, {"attributes": {"line_color": {"value": "#f22c40"}, "line_width": {"value": 2}, "line_alpha": {"value": 1.0}, "doc": null, "tags": [], "line_dash": [], "y": {"field": "y_values"}, "x": {"field": "x_values"}, "id": "8b863e1b-caec-453d-af59-78e169a96f10"}, "type": "Line", "id": "8b863e1b-caec-453d-af59-78e169a96f10"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "tags": [], "doc": null, "id": "2b5d4d21-1b45-41b1-a957-eb3d42e76c6f"}, "type": "PreviewSaveTool", "id": "2b5d4d21-1b45-41b1-a957-eb3d42e76c6f"}, {"attributes": {"tags": [], "doc": null, "mantissas": [2, 5, 10], "id": "bb25feed-4cda-472b-b031-3ff96144e43c"}, "type": "BasicTicker", "id": "bb25feed-4cda-472b-b031-3ff96144e43c"}, {"attributes": {"plot": {"subtype": "Chart", "type": "Plot", "id": "819ad75a-db7c-4e7a-aa2d-e573b9c950c6"}, "tags": [], "doc": null, "dimension": 1, "ticker": {"type": "BasicTicker", "id": "bb25feed-4cda-472b-b031-3ff96144e43c"}, "id": "194a95ed-23ea-4da2-b544-2f958574d303"}, "type": "Grid", "id": "194a95ed-23ea-4da2-b544-2f958574d303"}, {"attributes": {"column_names": ["x_values", "y_values"], "tags": [], "doc": null, "selected": {"2d": {"indices": []}, "1d": {"indices": []}, "0d": {"indices": [], "flag": false}}, "callback": null, "data": {"x_values": [1420070400000.0, 1420156800000.0, 1420243200000.0, 1420329600000.0, 1420416000000.0, 1420502400000.0, 1420588800000.0, 1420675200000.0, 1420761600000.0, 1420848000000.0, 1420934400000.0, 1421020800000.0, 1421107200000.0, 1421193600000.0], "y_values": [2, 3, 7, 5, 26, 221, 44, 233, 254, 265, 266, 267, 120, 111]}, "id": "b94454a1-6926-4a1b-997e-6ad76fba925f"}, "type": "ColumnDataSource", "id": "b94454a1-6926-4a1b-997e-6ad76fba925f"}];
+    Bokeh.load_models(all_models);
+    var plots = [{'modeltype': 'Plot', 'elementid': '5ecd94a1-6d62-4e42-9b89-9a9d777a5274', 'modelid': '819ad75a-db7c-4e7a-aa2d-e573b9c950c6'}];
+    for (idx in plots) {
+    	var plot = plots[idx];
+    	var model = Bokeh.Collections(plot.modeltype).get(plot.modelid);
+    	Bokeh.logger.info('Realizing plot:')
+    	Bokeh.logger.info(' - modeltype: ' + plot.modeltype);
+    	Bokeh.logger.info(' - modelid: ' + plot.modelid);
+    	Bokeh.logger.info(' - elementid: ' + plot.elementid);
+    	var view = new model.default_view({
+    		model: model,
+    		el: '#' + plot.elementid
+    	});
+    	Bokeh.index[plot.modelid] = view;
+    }
+});
+</script>
+
+</html>
